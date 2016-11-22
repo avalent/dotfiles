@@ -301,7 +301,7 @@ var threeMonitorLayout = S.lay("threeMonitor", {
     "repeat-last" : true
   },
   "MacVim" : mvimHash,
-  "iTerm" : tboltFullHash,
+  "iTerm2" : tboltFullHash,
   "Xcode" : tboltBigHash,
   "Google Chrome" : genBrowserHash(/^Developer\sTools\s-\s.+$/),
   "GitX" : {
@@ -329,7 +329,7 @@ var twoMonitorLayout = S.lay("twoMonitor", {
     "repeat-last" : true
   },
   "MacVim" : mvimHash,
-  "iTerm" : tboltFullHash,
+  "iTerm2" : tboltFullHash,
   "Xcode" : tboltBigHash,
   "Google Chrome" : genBrowserHash(/^Developer\sTools\s-\s.+$/),
   "GitX" : {
@@ -352,7 +352,7 @@ var twoMonitorLayout = S.lay("twoMonitor", {
 var oneMonitorLayout = S.lay("oneMonitor", {
   "Adium" : adiumHash,
   "MacVim" : lapFullHash,
-  "iTerm" : lapFullHash,
+  "iTerm2" : lapFullHash,
   "Terminal" : lapFullHash,
   "Google Chrome" : lapFullHash,
   "Xcode" : lapFullHash,
@@ -449,7 +449,7 @@ slate.bindAll({
         f: $.focus('Firefox'),
         g: $.focus('Messages'),
         h: $.focus('HipChat'),
-        i: $.focus('iTerm'),
+        i: $.focus('iTerm2'),
         j: $.focus('IntelliJ IDEA'),
         l: $.focus('Microsoft Lync'),
         m: $.focus('Mail'),

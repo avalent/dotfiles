@@ -58,6 +58,17 @@ bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
+# colour man pages - taken from an Amazon EC2 instance: /etc/profile.d/less.sh
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;38;5;208m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[04;38;5;111m'
+
+# Haskell stack bin directory
+export PATH=$HOME/.local/bin:$PATH
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
