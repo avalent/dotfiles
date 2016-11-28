@@ -161,8 +161,15 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+"let g:syntastic_check_on_open=1
+"let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+" Syntastic is really slow. Put it into passive mode so I have to manually
+" execute :SyntasticCheck if I want it to run.
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["php"],
+    \ "passive_filetypes": ["puppet"] }
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
@@ -208,6 +215,10 @@ cnoremap w!! w !sudo tee %
 " going into visual mode on the whole line, and then running the command
 nnoremap <silent> <leader>dp V:diffput<cr>
 nnoremap <silent> <leader>dg V:diffget<cr>
+
+" When using Gdiff we often want to talk from either the left or right panes.
+nnoremap <silent> <leader>gl :diffget //2 <cr> :diffupdate<cr>
+nnoremap <silent> <leader>gr :diffget //3 <cr> :diffupdate<cr>
 
 " Snippet trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.

@@ -24,3 +24,6 @@ bind generic I !git add -i %(file)
 
 # Make G jump to the end like vim
 bind generic G move-last-line
+
+# Interactive rebase
+bind main B !git rebase -i %(commit)
