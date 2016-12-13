@@ -70,6 +70,12 @@ augroup vimrcEx
 
   " Automatically wrap at 120 characters and set shiftwidth to 4 for Java
   autocmd BufNewFile,BufRead *.java setlocal textwidth=120 shiftwidth=4
+
+  " Automatically wrap at 120 characters for Haskell
+  autocmd BufNewFile,BufRead *.hs setlocal textwidth=120
+
+  " Automatically wrap at 140 characters and set shiftwidth to 4 for Python
+  autocmd BufNewFile,BufRead *.py setlocal textwidth=140 shiftwidth=4
 augroup END
 
 " Softtabs, 2 spaces
