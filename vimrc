@@ -256,6 +256,13 @@ nnoremap <silent> <leader>m :CtrlPMRU<CR>
 " FIXME For some reason this isn't working
 "inoremap <C-u> <ESC>viwUea
 
+" Common identifiers that we may want to align on in Haskell.
+let g:haskell_tabular = 1
+vmap a, :Tabularize /,<CR>
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

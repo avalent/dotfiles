@@ -5,4 +5,4 @@
 nix:
   enable: true
   #shell-file: shell.nix
-  packages: [git, pkgconfig, zlib]
+  packages: [git, cryptol, curl, openssl, pkgconfig, zlib]
