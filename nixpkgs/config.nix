@@ -7,6 +7,8 @@
       paths = [
         emacs
         file
+        tig
+        stow
       ];
     };
   };

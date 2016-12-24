@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# lives-at: ~/.byobu/bin/10_vms
+
+# Byobu custom status notification that lists the number
+# of running virtualbox virtual machines. The idea was
+# taken from http://blog.dustinkirkland.com/2010/01/byobu-custom-status-notifications-in-3.html
+#
+# This script will be run every 10 seconds, since it is named 10_vms
+
+vms=$(VBoxManage list runningvms | wc -l | tr -d ' ')
+if [ -z $vms ]; then
+    vms="0"
+fi
+
+# Formatting: 'VMs: 3'
+#echo "VMs: $vms"
+
+# Formatting: '3 VMs' or '1 VM'
+msg="$vms VMs"
+
+if [ $vms -eq "1" ]; then
+    msg="$vms VM"
+fi
+
+echo "$msg"
+
+# My failed attempts so far at color codes...
+#printf "\005{= bw}%s\005{-}" "$msg"
+#printf "\005{= bw}%s\005{-}"
+#printf '\e[1;34m%-6s\e[m\n' "This is text"
+
+#blue=$(tput setaf 4)
+#normal=$(tput sgr0)
+#printf "%s\n" "${blue}This text is blue${normal}"
+
+
