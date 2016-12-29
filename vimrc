@@ -59,7 +59,7 @@ augroup vimrcEx
   autocmd FileType markdown setlocal spell
 
   " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=120
 
   " Automatically wrap at 72 characters and spell check git commit messages
   autocmd FileType gitcommit setlocal textwidth=72
@@ -73,6 +73,9 @@ augroup vimrcEx
 
   " Automatically wrap at 120 characters for Haskell
   autocmd BufNewFile,BufRead *.hs setlocal textwidth=120
+
+  " Automatically wrap at 140 characters and set shiftwidth to 4 for Javascript
+  autocmd BufNewFile,BufRead *.js setlocal textwidth=140 shiftwidth=4
 
   " Automatically wrap at 140 characters and set shiftwidth to 4 for Python
   autocmd BufNewFile,BufRead *.py setlocal textwidth=140 shiftwidth=4
