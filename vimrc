@@ -259,12 +259,46 @@ nnoremap <silent> <leader>m :CtrlPMRU<CR>
 " FIXME For some reason this isn't working
 "inoremap <C-u> <ESC>viwUea
 
-" Common identifiers that we may want to align on in Haskell.
+" Common identifiers that we may want to align on in Haskell, and many other
+" languages
 let g:haskell_tabular = 1
+nmap a, :Tabularize /,<CR>
 vmap a, :Tabularize /,<CR>
+nmap a= :Tabularize /=<CR>
 vmap a= :Tabularize /=<CR>
+nmap a; :Tabularize /::<CR>
 vmap a; :Tabularize /::<CR>
+nmap a- :Tabularize /-><CR>
 vmap a- :Tabularize /-><CR>
+nmap a: :Tabularize /:\zs<CR>
+vmap a: :Tabularize /:\zs<CR>
+
+" vim-slime configuration
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+
+" Haskell dev
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+
+" Table editing in vim:
+" https://connermcd.wordpress.com/2012/05/20/pandoc-table-editing-in-vim/
+" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+" https://gist.github.com/tpope/287147
+" TODO: Perhaps add this to a vim plugin?
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
