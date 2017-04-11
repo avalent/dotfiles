@@ -20,6 +20,7 @@
         file
         tig
         #myCoolVim
+        sox
         stow
       ];
     };

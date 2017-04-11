@@ -26,5 +26,13 @@ alias ni="nix-env --install"
 alias ns="nix-env -qa | grep"
 alias nu="nix-channel --update nixpkgs; nix-env -u '*'; nix-collect-garbage -d"
 
+# Docker
+alias dk="docker"
+alias dkm="docker-machine"
+alias dkc="docker-compose"
+
+# todotxt
+alias t="todo.sh"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
