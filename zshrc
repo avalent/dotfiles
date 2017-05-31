@@ -69,6 +69,9 @@ export LESS_TERMCAP_us=$'\E[04;38;5;111m'
 # Haskell stack bin directory
 export PATH=$HOME/.local/bin:$PATH
 
+# Initialize fasd
+eval "$(fasd --init auto)"
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
