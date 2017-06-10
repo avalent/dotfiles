@@ -1,2 +1,5 @@
 " Gmail is setup with a bunch of keyboard shortcuts which don't work well with vimperator
 ignorekeys add "mail.google.com"
+
+" Outlook also doesn't work well with vimperator
+ignorekeys add "ballard.amazon.com"
