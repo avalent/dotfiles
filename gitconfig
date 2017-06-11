@@ -25,3 +25,6 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[user]
+	name = Ashley Valent
+	email = ashley.valent@gmail.com
