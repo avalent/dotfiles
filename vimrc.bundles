@@ -73,6 +73,12 @@ Plug 'honza/vim-snippets'
 
 " Completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" TODO: Enable semantic completion for a bunch of languages
+" https://github.com/Valloric/YouCompleteMe
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --omnisharp-completer --gocode-completer --tern-completer --racer-completer' }
+" Alternatively to compile with everything enabled you can pass the all flag:
+" So, to install with all language features, ensure xbuild, go, tsserver, node, npm, rustc, and cargo tools are installed and in your PATH
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 
 " Fuzzy search
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
