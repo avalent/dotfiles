@@ -6,3 +6,11 @@ nix:
   enable: true
   #shell-file: shell.nix
   packages: [git, cryptol, curl, openssl, pkgconfig, zlib]
+
+templates:
+  params:
+    author-email: ashley.valent@gmail.com
+    author-name: Ashley Valent
+    category: Science
+    copyright: Ashley Valent
+    github-username: avalent
