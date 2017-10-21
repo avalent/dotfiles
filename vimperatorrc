@@ -3,3 +3,11 @@ ignorekeys add "mail.google.com"
 
 " Outlook also doesn't work well with vimperator
 ignorekeys add "ballard.amazon.com"
+
+# Google docs/sheets
+ignorekeys add "docs.google.com"
+ignorekeys add "sheets.google.com"
+
+# Diagramming software
+ignorekeys add "asciiflow.com"
+ignorekeys add "draw.io"
