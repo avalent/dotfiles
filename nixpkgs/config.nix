@@ -16,12 +16,36 @@
     all = with self.pkgs; buildEnv {
       name = "all";
       paths = [
-        emacs
         file
         tig
-        #myCoolVim
         sox
         stow
+        htop
+        nodejs
+        xsel-unstable
+        silver-searcher
+        httpie
+        graphviz
+        rlwrap
+        graphviz
+        sbt
+
+        # Text editors.
+        #myCoolVim
+        emacs
+
+        # Profiling tools.
+        valgrind
+
+        # Communication.
+        irssi
+
+        # Debugging tools.
+        ltrace
+        strace
+
+        # Facebook path picker.
+        fpp
       ];
     };
 
