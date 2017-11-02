@@ -12,9 +12,11 @@
   ci = commit -v
   co = checkout
   st = status
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+	pager = less -FMRiX
 [merge]
   ff = only
 [commit]

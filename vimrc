@@ -300,6 +300,36 @@ function! s:align()
   endif
 endfunction
 
+" Interleave lines, taken from:
+" https://stackoverflow.com/questions/14794800/interlacing-lines-vim
+command! -bar -nargs=* -range=% Interleave :<line1>,<line2>call Interleave(<f-args>)
+fun! Interleave(...) range
+  if a:0 == 0
+    let x = 1
+    let y = 1
+  elseif a:0 == 1
+    let x = a:1
+    let y = a:1
+  elseif a:0 == 2
+    let x = a:1
+    let y = a:2
+  elseif a:0 > 2
+    echohl WarningMsg
+    echo "Argument Error: can have at most 2 arguments"
+    echohl None
+    return
+  endif
+  let i = a:firstline + x - 1
+  let total = a:lastline - a:firstline + 1
+  let j = total / (x + y) * x + a:firstline
+  while j < a:lastline
+    let range = y > 1 ? j . ',' . (j+y) : j
+    silent exe range . 'move ' . i
+    let i += y + x
+    let j += y
+  endwhile
+endfun
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
