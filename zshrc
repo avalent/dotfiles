@@ -53,9 +53,7 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^K" kill-line
 bindkey "^R" history-incremental-search-backward
-bindkey "^P" history-search-backward
 bindkey "^Y" accept-and-hold
-bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # colour man pages - taken from an Amazon EC2 instance: /etc/profile.d/less.sh
@@ -116,6 +114,11 @@ DEFAULT_USER=$USER
 
 # Oh my zsh configuration
 [[ -f ~/.zshrc.oh-my-zsh ]] && source ~/.zshrc.oh-my-zsh
+
+# Make ctrl+p behave exactly like up arrow. Same done for ctrl+n for
+# consistency.
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
