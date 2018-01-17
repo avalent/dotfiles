@@ -1,6 +1,12 @@
 # From https://nixos.org/wiki/Cheatsheet#config_nix
+#
+# Install all using:
+# $ nix-env -i all
+#
+
 {
   allowUnfree = true;
+  #allowBroken = true;
   #packageOverrides = pkgs_: with pkgs_; {
     #all = with pkgs; buildEnv {
       #name = "all";
@@ -22,7 +28,7 @@
         stow
         htop
         nodejs
-        xsel-unstable
+        #xsel-unstable
         silver-searcher
         httpie
         graphviz
@@ -39,10 +45,11 @@
 
         # Communication.
         irssi
+        mutt
 
         # Debugging tools.
-        ltrace
-        strace
+        #ltrace
+        #strace
 
         # Facebook path picker.
         fpp
