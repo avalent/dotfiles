@@ -4,6 +4,9 @@ let mapleader = ","
 set relativenumber
 set hlsearch
 
+" Enable the surround plugin
+set surround
+
 " Mapping vim commands to IntelliJ actions. To discover supported actions
 " type :actionlist command inside the ide.
 map <Leader>f :action ReformatCode<CR>

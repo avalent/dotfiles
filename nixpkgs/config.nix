@@ -35,6 +35,10 @@
         rlwrap
         graphviz
         sbt
+        jq
+
+        ctags
+        cscope
 
         # Text editors.
         #myCoolVim
