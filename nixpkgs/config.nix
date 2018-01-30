@@ -37,6 +37,10 @@
         sbt
         jq
 
+        iperf
+        fswatch
+        watch
+
         ctags
         cscope
 
