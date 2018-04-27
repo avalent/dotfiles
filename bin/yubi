@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Removed and then adds keys from a PKCS#11 device.
+# Note that the ssh-agent must have been started with the location of the
+# PKCS#11 library whitelisted, e.g.
+#     $ ssh-agent -d -a ~/.agent.socket -P '/nix/store/6cmi13s0zsc04mzdscag8y2mzgax9x9c-opensc-0.15.0/lib/*' &
+
+# Remove keys provided by the PKCS#11 shared library.
+ssh-add -e $(dirname $(dirname $(readlink $(which opensc-tool))))/lib/opensc-pkcs11.so
+
+# Add keys provided by the PKCS#11 shared library.
+ssh-add -s $(dirname $(dirname $(readlink $(which opensc-tool))))/lib/opensc-pkcs11.so
