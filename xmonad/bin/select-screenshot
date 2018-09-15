@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+TMPFILE=$(mktemp -t screenshot.XXXXXXXXXX.png) || exit 1
+import $TMPFILE
+cat $TMPFILE | copyq copy image/png -
