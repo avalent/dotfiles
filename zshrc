@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   current_branch=$(git current-branch 2> /dev/null)
