@@ -225,6 +225,13 @@ cnoremap w!! w !sudo tee %
 nnoremap <silent> <leader>dp V:diffput<cr>
 nnoremap <silent> <leader>dg V:diffget<cr>
 
+" https://lornajane.net/posts/2015/vimdiff-and-vim-to-compare-files
+" My vimdiff cheatsheet only contains three items:
+
+" ]c Go to next block of diff
+" dp Push this version of the current block into the other pane
+" do Use the block from the other pane in this pane
+
 " When using Gdiff we often want to talk from either the left or right panes.
 nnoremap <silent> <leader>gl :diffget //2 <cr> :diffupdate<cr>
 nnoremap <silent> <leader>gr :diffget //3 <cr> :diffupdate<cr>
