@@ -144,6 +144,7 @@ main = xmonad $ xfceConfig
                   , focusedBorderColor = "#cd8b00"
                   , workspaces         = myWorkspaces
                   , manageHook         = myManageHook <+> manageHook xfceConfig
+                  , layoutHook         = smartBorders $ myLayout
                   , terminal           = myTerminal
                   } `additionalKeysP` [ ("M-C-S-4", spawn mySelectScreenshot ) ]
 
