@@ -133,6 +133,7 @@ myManageHook = composeAll
     , className =? "MPlayer"        --> doFloat
     , className =? "VirtualBox"     --> doShift "4:vm"
     , className =? "Xchat"          --> doShift "5:media"
+    , className =? "Slack"          --> doShift "5:media"
     , className =? "stalonetray"    --> doIgnore
     , className =? "albert"         --> doFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
