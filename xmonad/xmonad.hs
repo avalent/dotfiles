@@ -123,19 +123,21 @@ myModMask = mod1Mask
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Chromium"       --> doShift "2:web"
-    --, className =? "Google-chrome"  --> doShift "2:web"
-    , resource  =? "desktop_window" --> doIgnore
-    , className =? "Galculator"     --> doFloat
-    , className =? "Steam"          --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "gpicview"       --> doFloat
-    , className =? "MPlayer"        --> doFloat
-    , className =? "VirtualBox"     --> doShift "4:vm"
-    , className =? "Xchat"          --> doShift "5:media"
-    , className =? "Slack"          --> doShift "5:media"
-    , className =? "stalonetray"    --> doIgnore
-    , className =? "albert"         --> doFloat
+    [ className =? "Chromium"            --> doShift "2:web"
+    , className =? "Google-chrome"       --> doShift "2:web"
+    , resource  =? "desktop_window"      --> doIgnore
+    , className =? "Galculator"          --> doFloat
+    , className =? "Steam"               --> doFloat
+    , className =? "Gimp"                --> doFloat
+    , resource  =? "gpicview"            --> doFloat
+    , className =? "MPlayer"             --> doFloat
+    , className =? "VirtualBox"          --> doShift "4:vm"
+    , className =? "Xchat"               --> doShift "5:media"
+    , className =? "Slack"               --> doShift "5:media"
+    , className =? "Spotify"             --> doShift "5:media"
+    , className =? ".terminator-wrapped" --> doShift "1:term"
+    , className =? "stalonetray"         --> doIgnore
+    , className =? "albert"              --> doFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 {-main = xmonad kdeConfig-}
