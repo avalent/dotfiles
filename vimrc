@@ -337,6 +337,19 @@ fun! Interleave(...) range
   endwhile
 endfun
 
+" Sends text from the cursor to the end of the line to the pane to the right.
+function! TmuxSendToRightPane()
+    normal! y$o
+    normal! p
+    .:Twrite right
+    normal! u
+endfunction
+
+" TODO: Setup a chords file like:
+" https://github.com/dtinth/.vimrc/blob/master/chords.vim
+call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+call arpeggio#map('n', '', 0, 'cmd', ':call TmuxSendToRightPane()<CR>')
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
