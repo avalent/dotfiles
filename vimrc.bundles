@@ -63,6 +63,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Incubator
+Plug 'benmills/vimux'
+Plug 'kana/vim-arpeggio'
+Plug 'tpope/vim-tbone'
+
 " Snippet engine
 Plug 'SirVer/ultisnips'
 
