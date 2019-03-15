@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#https://stackoverflow.com/questions/2472629/temporary-operation-in-a-temporary-directory-in-shell-script
+TDIR=`mktemp -d`
+
+trap "{ cd - ; rm -rf $TDIR; exit 255; }" SIGINT
+
+cd $TDIR
+# do important stuff here
+zsh
+
+cd -
+
+rm -rf $TDIR
+
+exit 0
